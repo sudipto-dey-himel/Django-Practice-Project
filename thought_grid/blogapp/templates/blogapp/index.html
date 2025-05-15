@@ -1,0 +1,22 @@
+{% extends "blogapp/layout.html" %}
+
+{% block content %}
+    
+
+    <body>
+
+        <br>
+        <br>
+        
+        <div class="text-dark text-center py-5">
+        <h2 class="display-4 fw-bold">Welcome to Thought Grid</h2>
+        <p class="lead"><strong>A place to organize your thoughts, ideas, and creativity.</strong></p> 
+        <hr class="opacity-100">
+        <div class="d-flex justify-content-center mt-4">
+            <a class="btn btn-primary btn-lg shadow-lg" href="{% url 'blog_list' %}">Start Exploring</a>
+        </div>
+    </div>
+
+    </body>
+
+{% endblock %}
