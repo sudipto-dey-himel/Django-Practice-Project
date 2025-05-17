@@ -24,8 +24,8 @@
 
 
                 {% if blog.author == user %}
-                    <a href="#" class="btn btn-primary"> Edit </a>
-                    <a href="#" class="btn btn-danger"> Delete </a>
+                    <a href="{% url 'edit' blog.id %}" class="btn btn-primary"> Edit </a>
+                    <a href="{% url 'delete' blog.id %}" class="btn btn-danger"> Delete </a>
                 {% endif %}
 
             </div>

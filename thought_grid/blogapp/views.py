@@ -27,12 +27,12 @@ def create(request):
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             blog = form.save(commit=False)
-            blog.user = request.user
+            blog.author = request.user
             blog.save()
             return redirect('blog_list')
     else:
         form = BlogForm()
-    return render(request, 'form.html', {'form' : form})
+    return render(request, 'blogapp/blog/blog_form.html', {'form' : form})
 
 
 
@@ -40,18 +40,18 @@ def create(request):
 
 # edit
 def edit(request, blog_id):
-    blog_id = None
-    blog = get_object_or_404(Blog, pk=blog_id, user=request.user)
+    # blog_id = None
+    blog = get_object_or_404(Blog, pk=blog_id, author=request.user)
     if request.method=='POST':
-        form = BlogForm(request.POST, request.FILES, instance=blog_id)
+        form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
             blog = form.save(commit = False)
-            blog.user = request.user
+            blog.author = request.user
             blog.save()
             return redirect('blog_list')
     else:
-        form=BlogForm(instance=blog_id)
-    return render(request, 'form.html', {'form' : form})
+        form=BlogForm(instance=blog)
+    return render(request, 'blogapp/blog/blog_form.html', {'form' : form})
 
 
 
