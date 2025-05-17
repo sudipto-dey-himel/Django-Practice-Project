@@ -1,0 +1,14 @@
+{% extends "blogapp/layout.html" %}
+
+
+{% block content %}
+
+    <h5 class="test-center mt-4">Are you sure?</h5>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger"> Delete </button> <br>
+        <a href="{% url 'blog_list' %}" class="btn btn-success mt-2"> Cancel </a>
+    </form>
+
+{% endblock %}

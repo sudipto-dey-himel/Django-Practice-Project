@@ -59,11 +59,11 @@ def edit(request, blog_id):
 
 # delete
 def delete(request, blog_id):
-    blog = get_object_or_404(Blog, pk=blog_id, user=request.user)
+    blog = get_object_or_404(Blog, pk=blog_id, author=request.user)
     if request.method=='POST':
         blog.delete()
         return redirect('blog_list')
-    return render(request, 'delete.html', {'blog':blog})
+    return render(request, 'blogapp/blog/delete.html', {'blog':blog})
 
 
 
