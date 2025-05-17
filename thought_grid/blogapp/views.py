@@ -22,7 +22,7 @@ def blog_list(request):
 
 
 # create
-def blog_create(request):
+def create(request):
     if request.method=='POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
@@ -40,6 +40,7 @@ def blog_create(request):
 
 # edit
 def edit(request, blog_id):
+    blog_id = None
     blog = get_object_or_404(Blog, pk=blog_id, user=request.user)
     if request.method=='POST':
         form = BlogForm(request.POST, request.FILES, instance=blog_id)

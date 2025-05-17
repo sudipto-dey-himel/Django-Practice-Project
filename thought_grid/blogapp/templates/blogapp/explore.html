@@ -4,6 +4,48 @@
 
 
 
+<a class="btn btn-primary mt-4" href="{% url 'create' %}"> Create a new blog</a>
+<br> <br>
+
+
+<div class="container row gap-4"> 
+    {% for blog in blogs %}
+        <div class="card" style="width: 18rem;">
+
+            {% if blog.image %}
+                <img src="{{blog.image.url}}" class="card-img-top" alt="...">
+            {% endif %}
+
+            <div class="card-header text-body-secondary" style="font-family: cursive;">Author: {{blog.author}}</div>
+            <div class="card-body">
+                <!---<h5 class="card-subtitle mb-2">z</h5>--->
+                <h5> <div class="card-header text-left">Title: {{blog.title}} </div> </h5>
+                <p class="card-text">{{blog.content}}</p>
+
+
+                {% if blog.author == user %}
+                    <a href="#" class="btn btn-primary"> Edit </a>
+                    <a href="#" class="btn btn-danger"> Delete </a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+        {% comment %} <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">a</h5>
+                <p class="card-text">b</p>
+                <a href="#" class="btn btn-primary">c</a>
+            </div>
+        </div> {% endcomment %}
+
+</div> 
+
 
 
 {% endblock %}
