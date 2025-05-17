@@ -22,6 +22,7 @@ def blog_list(request):
 
 
 # create
+@login_required
 def create(request):
     if request.method=='POST':
         form = BlogForm(request.POST, request.FILES)
@@ -39,6 +40,7 @@ def create(request):
 
 
 # edit
+@login_required
 def edit(request, blog_id):
     # blog_id = None
     blog = get_object_or_404(Blog, pk=blog_id, author=request.user)
@@ -58,6 +60,7 @@ def edit(request, blog_id):
 
 
 # delete
+@login_required
 def delete(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id, author=request.user)
     if request.method=='POST':
@@ -71,16 +74,16 @@ def delete(request, blog_id):
 # user registration
 def register(request):
     if request.method=='POST':
-        form = UserRegistrationForm(request)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password1'])
             user.save()
             login(request, user)
             return redirect('blog_list')
-        else:
-            form = UserRegistrationForm(request)
-        return render(request, 'registration/register.html', {'form':form})
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'registration/register.html', {'form':form})
 
 
 

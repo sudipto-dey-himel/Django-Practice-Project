@@ -1,0 +1,18 @@
+{% extends "blogapp/layout.html" %}
+
+
+{% block content %}
+
+
+<div class="align-center">
+    <h5>Login here</h5>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary">Login</button>
+    </form>
+    <p>Don't have any account? <a href="{% url 'register' %}"> Register here. </a></p>
+</div>
+
+{% endblock %}

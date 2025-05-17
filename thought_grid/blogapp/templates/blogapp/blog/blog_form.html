@@ -10,7 +10,7 @@
             Create new blog
         {% endif %}
 
-        <form method="POST" ebctype="multipart/form-data" type="form">
+        <form method="POST" enctype="multipart/form-data" type="form">
             {% csrf_token %}
             {{form.as_p}}
         
