@@ -6,8 +6,8 @@
 
 body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #f9f9ff, #c7d2ff);
-      color: #1f2937;
+      background: linear-gradient(to bottom right, #ffffff, #d7afff);
+      background: linear-gradient(to bottom left, #eee3ff, #e2dafc);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -15,7 +15,7 @@ body {
 
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
 }
 
@@ -23,6 +23,13 @@ body {
 .nav-link:hover {
   color: #66bac0 !important;
 }
+
+.nav-link.temp {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 
 .anime {
   align-items: center;
@@ -44,14 +51,14 @@ body {
 }
     
 .anime hr {
-  width: 78%;
+  width: 80%;
   margin: 1.5rem auto;
   border: none;
-  border-top: 1px solid #5e5200;
+  border-top: 1px solid #5d4f00;
 }
 
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -61,6 +68,10 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
+
+
+
+
 
 

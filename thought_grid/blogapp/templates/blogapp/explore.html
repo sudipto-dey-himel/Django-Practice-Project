@@ -4,8 +4,10 @@
 
 
 
-<a class="btn btn-primary mt-4" href="{% url 'create' %}"> Create a new blog</a>
-<br> <br>
+<a href="{% url 'create' %}" class="btn btn-outline-primary shadow-sm px-4 py-2.5 rounded-pill fw-semibold m-4">
+    ✍️ Create a new blog
+</a>
+
 
 
 <div class="container row gap-4"> 
@@ -16,7 +18,9 @@
                 <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
             {% endif %}
 
-            <div class="card-header text-body-secondary" style="font-family: cursive;">Author: {{blog.author}}</div>
+            <div class="card-header text-body-secondary" style="font-family: cursive;">
+                <i class="bi bi-person-circle"></i> Author: {{ blog.author }}
+            </div>
             <div class="card-body">
                 <!---<h5 class="card-subtitle mb-2">z</h5>--->
                 <h5> <div class="card-header text-left">Title: {{blog.title}} </div> </h5>
