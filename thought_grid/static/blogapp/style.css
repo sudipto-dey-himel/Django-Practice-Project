@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f9f9ff, #c7d2ff);
+      color: #1f2937;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+
+.nav-link:hover {
+  color: #66bac0 !important;
+}
+
+.anime {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10%;
+  animation: fadeIn 3.5s ease;
+}
+
+.anime h2 {
+  font-size: 3.5rem;
+  margin: 2%;
+  margin-top: 5.2%;
+}
+
+.anime p {
+  color: #617087;
+  margin-bottom: 3rem;
+}
+    
+.anime hr {
+  width: 78%;
+  margin: 1.5rem auto;
+  border: none;
+  border-top: 1px solid #5e5200;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+    
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
