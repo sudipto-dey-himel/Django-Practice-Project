@@ -6,7 +6,7 @@
 
 body {
       font-family: 'Poppins', sans-serif;
-      background-image: linear-gradient(#ebe2ff, #e2edfe);
+      background-image: linear-gradient(#ffffff, #d5faffe7);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -21,7 +21,7 @@ body {
 
 
 .nav-link:hover {
-  color: #33cbd5 !important;
+  color: #17b3cf !important;
 }
 
 
@@ -71,6 +71,68 @@ body {
 }
 
 
+
+.blog-list {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.blog-card {
+  width: 90%;
+  max-width: 320px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 20px rgba(27, 47, 50, 0.288);
+  transition: 0.4s ease-in-out;
+  transform: translateY(-5px);
+}
+
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+.blog-card h6 {
+  font-family: consolas, monospace;
+  color: #617087;
+  font-size: 0.8rem;
+}
+
+.blog-card h4 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000000;
+  font-size: 1rem;
+}
+
+
+
+.blog-card p {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #000000;
+  font-size: 1rem;
+  margin-top: 10px;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+
+.temp{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #657a83;
+  text-decoration: none;
+}
 
 
 

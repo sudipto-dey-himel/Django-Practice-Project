@@ -2,44 +2,41 @@
 
 {% block content %}
 
-
-
-<a href="{% url 'create' %}" class="btn btn-outline-primary shadow-sm px-4 py-2 rounded-pill fw-semibold m-4">
+<a href="{% url 'create' %}" class="btn btn-outline-primary shadow-sm px-4 py-2 rounded-pill fw-semibold mt-3 mb-2">
     ✍️ Create a new blog
 </a>
 
-
-
-<div class="container row gap-4"> 
+<div class="blog-list">
     {% for blog in blogs %}
-        <div class="card" style="width: 18rem;">
-
+        <div class="blog-card">
             {% if blog.image %}
-                <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
+                <a href=""> <img src="{{blog.image.url}}" alt="" class="img"> </a> 
             {% endif %}
-
-            <div class="card-header text-body-secondary" style="font-family: cursive;">
-                <i class="bi bi-person-circle"></i> Author: {{ blog.author }}
-            </div>
-            <div class="card-body">
-                <!---<h5 class="card-subtitle mb-2">z</h5>--->
-                <h5> <div class="card-header text-left">Title: {{blog.title}} </div> </h5>
-                <p class="card-text">{{blog.content}}</p>
-
-
-                {% if blog.author == user %}
-                    <a href="{% url 'edit' blog.id %}" class="btn btn-primary"> Edit </a>
-                    <a href="{% url 'delete' blog.id %}" class="btn btn-danger"> Delete </a>
+            <h6>Author: {{blog.author}} | {{blog.created_at}}</h6>
+            <h4>Title: {{blog.title}} </h4>
+            <p>
+                {{ blog.content|truncatechars:100 }}
+                
+                {% if blog.content|length > 100 %}
+                    <a href="" class="temp"> &nbsp;  read more</a>
                 {% endif %}
+            </p>
+            
 
-            </div>
 
+            {% if blog.author == user %}
+                <a href="{% url 'edit' blog.id %}" class="btn btn-outline-primary shadow-sm px-3 py-2 fw-semibold m-2">
+                    ✏️ Edit
+                </a>
+
+                <a href="{% url 'delete' blog.id %}" class="btn btn-outline-danger shadow-sm px-3 py-2 fw-semibold m-2">
+                    🗑️ Delete
+                </a>
+
+
+            {% endif %}
         </div>
-
     {% endfor %}
-
-</div> 
-
-
+</div>
 
 {% endblock %}
