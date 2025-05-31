@@ -87,5 +87,12 @@ def register(request):
 
 
 
+# view full blog
+def details(request, blog_id):
+    blog=get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'blogapp/blog/details.html', {'blog': blog})
+
+
+
 
 

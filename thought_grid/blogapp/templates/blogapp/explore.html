@@ -10,7 +10,7 @@
     {% for blog in blogs %}
         <div class="blog-card">
             {% if blog.image %}
-                <a href=""> <img src="{{blog.image.url}}" alt="" class="img"> </a> 
+                <a href="{% url 'details' blog.id %}"> <img src="{{blog.image.url}}" alt="" class="img"> </a> 
             {% endif %}
             <h6>Author: {{blog.author}} | {{blog.created_at}}</h6>
             <h4>Title: {{blog.title}} </h4>
@@ -18,7 +18,7 @@
                 {{ blog.content|truncatechars:100 }}
                 
                 {% if blog.content|length > 100 %}
-                    <a href="" class="temp"> &nbsp;  read more</a>
+                    <a href="{% url 'details' blog.id %}" class="temp"> &nbsp;  read more</a>
                 {% endif %}
             </p>
             

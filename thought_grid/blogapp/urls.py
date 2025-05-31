@@ -13,4 +13,7 @@ urlpatterns = [
     path('<int:blog_id>/delete/', views.delete, name='delete'),
     path('register/', views.register, name="register"),
     path('accounts/', include('django.contrib.auth.urls')),
+    # path('login/', auth_views.LoginView.as_view(template_name='blogapp/login.html'), name='login'),
+    # path('logout/', auth_views.LogoutView.as_view(template_name='blogapp/logout.html'), name='logout'),
+    path('<int:blog_id>/details/', views.details, name='details')
 ] 
